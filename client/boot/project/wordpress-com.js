@@ -7,7 +7,26 @@ const React = require( 'react' ),
 	startsWith = require( 'lodash/startsWith' ),
 	debug = require( 'debug' )( 'calypso' ),
 	page = require( 'page' ),
-	includes = require( 'lodash/includes' );
+	includes = require( 'lodash/includes' ),
+	a11y = require( 'react-a11y' );
+
+if ( process.env.NODE_ENV === 'development' ) {
+	a11y( React, {
+		ReactDOM: ReactDom,
+		exclude: [
+			'NO_ROLE',
+			'NO_TABINDEX',
+			'BUTTON_ROLE_SPACE',
+			'BUTTON_ROLE_ENTER',
+			'TABINDEX_REQUIRED_WHEN_ARIA_HIDDEN',
+			'HASH_HREF_NEEDS_BUTTON',
+			'TABINDEX_NEEDS_BUTTON',
+			'MISSING_ALT',
+			'REDUNDANT_ALT',
+			'NO_LABEL',
+		]
+	} );
+}
 
 /**
  * Internal dependencies
