@@ -54,6 +54,11 @@ export function utils() {
 	syncHandler.pruneStaleRecords( '2 days' );
 
 	translatorJumpstart.init();
+
+	if ( process.env.NODE_ENV !== 'production' ) {
+		const axe = require( 'react-axe' );
+		axe( React, ReactDom, 1000 );
+	}
 }
 
 export const configureReduxStore = ( currentUser, reduxStore ) => {
