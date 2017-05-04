@@ -1,0 +1,47 @@
+.a11y-helper__test-results {
+	display: none;
+}
+
+.environment.is-a11y:hover .a11y-helper__test-results {
+	display: block;
+	width: 30em;
+	max-height: 80vh;
+	overflow-y: scroll;
+	position: absolute;
+		bottom: 17px;
+		right: 0;
+	margin: 0;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: initial;
+}
+
+.a11y-helper__violation {
+	.button-group {
+		float: right;
+	}
+
+	h5 {
+		clear: none;
+		font-weight: bold;
+		margin-bottom: 4px;
+	}
+
+	.a11y-helper__violation-level {
+		display: inline-block;
+		margin-right: 3px;
+
+		&.is-minor {
+			color: $alert-green;
+		}
+		&.is-moderate {
+			color: $alert-yellow;
+		}
+		&.is-serious {
+			color: $orange-jazzy;
+		}
+		&.is-critical {
+			color: $alert-red;
+		}
+	}
+}

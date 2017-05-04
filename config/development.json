@@ -44,6 +44,7 @@
 		"devdocs": true,
 		"devdocs/redirect-loggedout-homepage": true,
 		"devdocs/components-usage-stats": false,
+		"dev/a11y-helper": true,
 		"dev/test-helper": true,
 		"guided-tours/design-showcase-welcome": true,
 		"guided-tours/site-title": true,

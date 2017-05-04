@@ -54,11 +54,6 @@ export function utils() {
 	syncHandler.pruneStaleRecords( '2 days' );
 
 	translatorJumpstart.init();
-
-	if ( process.env.NODE_ENV !== 'production' ) {
-		const axe = require( 'react-axe' );
-		axe( React, ReactDom, 1000 );
-	}
 }
 
 export const configureReduxStore = ( currentUser, reduxStore ) => {
@@ -230,6 +225,12 @@ export function setupMiddlewares( currentUser, reduxStore ) {
 	if ( config.isEnabled( 'dev/test-helper' ) && document.querySelector( '.environment.is-tests' ) ) {
 		asyncRequire( 'lib/abtest/test-helper', ( testHelper ) => {
 			testHelper( document.querySelector( '.environment.is-tests' ) );
+		} );
+	}
+
+	if ( config.isEnabled( 'dev/a11y-helper' ) && document.querySelector( '.environment.is-a11y' ) ) {
+		asyncRequire( 'lib/a11y-helper', ( a11yHelper ) => {
+			a11yHelper( document.querySelector( '.environment.is-a11y' ) );
 		} );
 	}
 

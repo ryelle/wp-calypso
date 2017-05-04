@@ -155,6 +155,7 @@
   },
   "devDependencies": {
     "5to6-codemod": "git://github.com/jsnmoon/5to6-codemod#v1.8.0",
+    "axe-core": "2.2.0",
     "babel-eslint": "6.1.2",
     "chai": "3.5.0",
     "chai-enzyme": "0.5.2",
@@ -183,7 +184,6 @@
     "nock": "8.0.0",
     "nodemon": "1.4.1",
     "react-addons-test-utils": "15.4.0",
-    "react-axe": "2.1.1",
     "react-hot-loader": "1.3.0",
     "react-test-env": "0.2.0",
     "readline-sync": "1.4.5",

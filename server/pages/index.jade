@@ -74,6 +74,8 @@ html(lang=lang, dir=isRTL ? 'rtl' : 'ltr', class=isFluidWidth ? 'is-fluid-width'
 			div.environment-badge
 				if abTestHelper
 					div(class=['environment', 'is-tests'])
+				if a11yHelper
+					div(class=['environment', 'is-a11y'])
 				if branchName && branchName !== 'master'
 					span(class=['environment', 'branch-name'], title='Commit ' + commitChecksum)=branchName
 				if devDocs
